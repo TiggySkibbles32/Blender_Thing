@@ -27,12 +27,14 @@
 <body>
     <h1>Open Blender File</h1>
     <p>Click below to open the Blender file:</p>
-    <button class="button" onclick="openBlenderFile()">Open .BLEND File</button>
+    <button class="button" onclick="openBlenderFile()">Open Blender File</button>
 
     <script>
         function openBlenderFile() {
-            // For macOS (you can adjust the path if needed)
+            // Use file:// protocol to access local files
             const filePath = 'file:///Users/nicschl/Japanese%20Architecture.blend';
+
+            // Attempt to open the file in Blender via default app
             window.location.href = filePath;
         }
     </script>
