@@ -3,40 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Blender File</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+    <title>Open Blender</title>
+    <script>
+        function runPythonScript() {
+            fetch('/run-python-script')
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);  // Display output or error from Python script
+                });
         }
-        .button {
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    </script>
 </head>
 <body>
     <h1>Open Blender File</h1>
-    <p>Click below to open the Blender file:</p>
-    <button class="button" onclick="openBlenderFile()">Open Blender File</button>
-
-    <script>
-        function openBlenderFile() {
-            // Use file:// protocol to access local files
-            const filePath = 'file:///Users/nicschl/Japanese%20Architecture.blend';
-
-            // Attempt to open the file in Blender via default app
-            window.location.href = filePath;
-        }
-    </script>
+    <button onclick="runPythonScript()">Open Blender</button>
 </body>
 </html>
