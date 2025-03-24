@@ -5,8 +5,8 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Serve static files (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, '')));
+// Serve static files (HTML, CSS, JS) from the current directory
+app.use(express.static(path.join(__dirname)));
 
 // Endpoint to run the Python script
 app.get('/run-python', (req, res) => {
