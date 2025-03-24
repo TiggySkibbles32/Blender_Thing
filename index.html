@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Opener Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <p>I hate alon</p>
+
+    <h1>Click a Button to Open a File</h1>
+
+    <!-- Buttons that will open files -->
+    <button onclick="openFile('file1.txt')">Open File 1</button>
+    <button onclick="openFile('file2.pdf')">Open File 2</button>
+
+    <script>
+        // Function to open a file in the browser
+        function openFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename;
+            link.target = "_blank";
+            link.click();
+        }
+    </script>
+
 </body>
 </html>
