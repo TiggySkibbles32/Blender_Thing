@@ -7,33 +7,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
             margin-top: 50px;
         }
         button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <h1>Click the Button to Open a Blender File</h1>
-
-    <!-- Button that attempts to open Blender file via a batch script -->
+    <h1>Click to Open Blender File</h1>
     <button onclick="openBlender()">Open Blender File</button>
 
     <script>
-        // Function to run the batch file to open Blender
+        // Function to trigger the Python script
         function openBlender() {
-            const link = document.createElement('a');
-            link.href = '/Users/nicschl/Japanese Architecture.blend'; // Adjust path to your .bat file
-            link.target = '_blank';
-            link.click();
+            fetch('/run-python')
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => alert('Error: ' + error));
         }
     </script>
 
