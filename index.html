@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Opener Buttons</title>
+    <title>Open Blender File</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,17 +22,16 @@
 </head>
 <body>
 
-    <h1>Click a Button to Open a File</h1>
+    <h1>Click a Button to Open a Blender File</h1>
 
-    <!-- Buttons that will open files -->
-    <button onclick="openFile('Japanese Architecture.blend')">Open File 1</button>
-    <button onclick="openFile('file2.pdf')">Open File 2</button>
+    <!-- Buttons that will open Blender files -->
+    <button onclick="openFile('C:/Users/nicschl/Japanese Architecture.blend')">Open Blender File</button>
 
     <script>
-        // Function to open a file in the browser
+        // Function to open a Blender file locally
         function openFile(filename) {
             const link = document.createElement('a');
-            link.href = filename;
+            link.href = "file://" + filename;  // Using the file:// URL scheme
             link.target = "_blank";
             link.click();
         }
