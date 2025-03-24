@@ -22,17 +22,17 @@
 </head>
 <body>
 
-    <h1>Click a Button to Open a Blender File</h1>
+    <h1>Click the Button to Open a Blender File</h1>
 
-    <!-- Buttons that will open Blender files -->
-    <button onclick="openFile('C:/Users/nicschl/Japanese Architecture.blend')">Open Blender File</button>
+    <!-- Button that attempts to open Blender file via a batch script -->
+    <button onclick="openBlender()">Open Blender File</button>
 
     <script>
-        // Function to open a Blender file locally
-        function openFile(filename) {
+        // Function to run the batch file to open Blender
+        function openBlender() {
             const link = document.createElement('a');
-            link.href = "file://" + filename;  // Using the file:// URL scheme
-            link.target = "_blank";
+            link.href = '/Users/nicschl/Japanese Architecture.blend'; // Adjust path to your .bat file
+            link.target = '_blank';
             link.click();
         }
     </script>
