@@ -18,19 +18,16 @@
     </style>
 </head>
 <body>
-
     <h1>Click to Open Blender File</h1>
     <button onclick="openBlender()">Open Blender File</button>
 
     <script>
-        // Function to trigger the Python script
         function openBlender() {
-            fetch('/run-python')
+            fetch('/run-python')  // This triggers the /run-python route on the server
                 .then(response => response.json())
-                .then(data => alert(data.message))
-                .catch(error => alert('Error: ' + error));
+                .then(data => alert(data.message))  // Display the success message
+                .catch(error => alert('Error: ' + error));  // Display any errors
         }
     </script>
-
 </body>
 </html>
