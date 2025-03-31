@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Blender File</title>
+    <title>Open .blend File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Open Blender .blend File</h1>
-    <button id="openBlenderButton">Open Blender</button>
+
+    <h1>Open the Japanese Architecture .blend file</h1>
+    <button onclick="openFile()">Open File</button>
 
     <script>
-        document.getElementById("openBlenderButton").addEventListener("click", function() {
-            // Display an alert as a placeholder since this won't open Blender directly from HTML
-            alert("Please run the Python script to open Blender!");
-        });
+        function openFile() {
+            // Local system file handling (For the button to work, this needs to be part of a desktop app environment)
+            alert('Due to security restrictions in browsers, files cannot be directly opened.');
+        }
     </script>
 </body>
 </html>
